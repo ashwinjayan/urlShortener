@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect
 
 from .models import Link
 from .extension import db
+from .auth import requires_auth
 
 short = Blueprint('short', __name__)
 
@@ -33,11 +34,11 @@ def add_link():
         new_link=link.short_url, original_url=link.original_url)
 
 @short.route('/stats')
+@requires_auth
 def stats():
     links = Link.query.all()
-
     return render_template('stats.html', links=links)
 
 @short.errorhandler(404)
 def page_not_found(e):
-    return '', 404
+    return '<h1>404</h1>', 404
