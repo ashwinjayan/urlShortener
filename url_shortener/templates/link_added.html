@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short URL - Generated</title>
+</head>
+<body>
+    <h4>Original URL</h4>
+    <span>{{ original_url }}</span>
+    <br>
+    <h4>Short URL</h4>
+    <span>{{ url_for('short.redirect_to_url', short_url=new_link, _external=True) }}</span>
+</body>
+</html>

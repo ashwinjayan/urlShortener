@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short URL - Stats</title>
+</head>
+<body>
+    {% for link in links %}
+        Original URL: {{ link.original_url }} 
+        - Short URL: {{ link.short_url }} 
+        - Visits: {{ link.visits }}
+        <br>
+    {% endfor %}
+</body>
+</html>
