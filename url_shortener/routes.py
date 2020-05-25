@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template, request, redirect
-
 from .models import Link
 from .extension import db
 from .auth import requires_auth
@@ -20,7 +19,7 @@ def index():
 @short.route('/add_link', methods=['POST'])
 def add_link():
     original_url = request.form['original_url']
-    link = Link.query.filter_by(original_url=original_url).first_or_404()
+    link = Link.query.filter_by(original_url=original_url).first()
 
     if(link):
         return render_template('link_added.html', 
