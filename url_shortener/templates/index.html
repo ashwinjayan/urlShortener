@@ -1,14 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Short URL</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
+
 <body>
-    <form action="{{ url_for('short.add_link') }}" method="post">
-        <input type="text" name="original_url" id="">
-        <input type="submit" value="Submit">
-    </form>
+    <section class="section">
+        <div class="container">
+            <form action="{{ url_for('short.add_link') }}" method="post" id="shortener">
+                <label class="label">Original URL</label>
+                <!-- <div class="field has-addons">
+                    <div class="control">
+                        <input class="input" type="text" name="original_url" placeholder="URL Input">
+                    </div>
+                    <div class="control">
+                        <a class="button is-info" onclick="document.getElementById('shortener').submit();">
+                            Shorten
+                        </a>
+                    </div>
+                </div> -->
+
+                <div class="field is-grouped">
+                    <p class="control is-expanded">
+                        <input class="input" type="text" name="original_url" placeholder="URL Input">
+                    </p>
+                    <p class="control">
+                        <a class="button is-info" onclick="document.getElementById('shortener').submit();">
+                            Shorten
+                        </a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
 </body>
+
 </html>

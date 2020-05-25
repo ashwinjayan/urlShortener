@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Short URL - Generated</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Short URL</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
+
 <body>
-    <h4>Original URL</h4>
-    <span>{{ original_url }}</span>
-    <br>
-    <h4>Short URL</h4>
-    <span>{{ url_for('short.redirect_to_url', short_url=new_link, _external=True) }}</span>
+    <section class="section">
+        <div class="container">
+            <label class="label">Original URL</label>
+            <div class="control">
+                <input class="input" type="text" value="{{ original_url }}" readonly>
+            </div>
+            <br>
+            <label class="label">Short URL</label>
+            <div class="control">
+                <input class="input" type="text"
+                    value="{{ url_for('short.redirect_to_url', short_url=new_link, _external=True) }}" readonly>
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>
